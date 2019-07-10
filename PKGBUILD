@@ -87,9 +87,9 @@ validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
 )
-sha256sums=('8a3e55be3e788700836db6f75875b4d3b824a581d1eacfc2fcd29ed4e727ba3e'
-            'SKIP'
-            'f88e8a13cb33b5326086c484cfbab4e26cb0d28e323fbe6cd8057c1a6159bb6d'
+sha256sums=('SKIP'
+                               'cb1fbbe695c7d2fd39b9e36fd23c5256d1d65c7dd813ec30e2ecfc0ae2a9f333'
+            'f49067bb2e132a3e37dae7b041853a41bae52fa479c675f66b5914b7189bbcac'
             'ae2e95db94ef7176207c690224169594d49445e04249d2499e9d2fbc117a0b21'
             'c043f3033bb781e2688794a59f6d1f7ed49ef9b13eb77ff9a425df33a244a636'
             'ad6344badc91ad0630caacde83f7f9b97276f80d26a20619a87952be65492c65'
@@ -167,7 +167,7 @@ prepare() {
 
 build() {
   cd linux-${pkgver}
-  make bzImage modules
+  make -j3 bzImage modules
 }
 
 _package() {
